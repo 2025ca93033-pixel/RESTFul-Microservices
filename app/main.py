@@ -3,17 +3,10 @@
 # URL to run -> http://localhost:8000/docs which opens the Swagger API documentation
 # Run Uvicorn - uvicorn main:app --reload
 
-# Prometheus Addition
-# URL - https://github.com/prometheus/client_python
-# pip install prometheus-client  
-
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 from typing import Optional
 import json
-
-# Add Prometheus Monitoring 
-from prometheus_client import make_asgi_app
 
 app = FastAPI()
 
@@ -95,7 +88,3 @@ def change_user(userObj: User):
         return new_user
     else:
         return HTTPException(status_code=404, detail=f"User with id {userObj.id} does not exist")
-
-# Add prometheus asgi middleware to route /metrics requests
-metrics_app = make_asgi_app()
-app.mount("/metrics", metrics_app)
