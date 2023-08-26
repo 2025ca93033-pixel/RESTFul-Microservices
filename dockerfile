@@ -11,6 +11,7 @@ WORKDIR /code
 COPY ./requirements.txt /code/requirements.txt
 
 #Install the package dependencies in the requirements file.
+# Disable pip's caching; since docker will cache
 #The --no-cache-dir option tells pip to not save the downloaded packages locally, as that is only if pip was going to be run again to install the same packages, but that's not the case when working with containers.
 RUN pip install --no-cache-dir --upgrade -r /code/requirements.txt
 

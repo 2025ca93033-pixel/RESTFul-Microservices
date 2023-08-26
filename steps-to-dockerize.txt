@@ -1,6 +1,6 @@
 Steps to Dockerize the RESTful Application
 
-Step 1: Download or Clone the RESTful Application from GitHub repo - 
+Step 1: Download or Clone the RESTful Application from GitHub repo - https://github.com/shreyassureshrao/rest-api-demo
 
 Step 2: Open the application in Visual Studio Code
 
@@ -8,7 +8,7 @@ Step 3: Search for "Docker" extension in Visual Studio Code and Install 'Docker'
 
 Step 4: Run the Uvicorn server in command prompt and see the application output
 > Open Command Prompt
-> Go the the 'app' folder where main.py resides in your local folder 
+> Go the the 'app' folder where main.py resides in your local folder - D:\BITS-Pilani\Work\Scalable Services Course\rest-api-demo\app
 > pip install -r requirements.txt
 > uvicorn main:app --reload    [It runs the uvicorn server at port 8000]
 > In browser type http://localhost:8000/docs (FastAPI Swagger)
